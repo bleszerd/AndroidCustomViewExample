@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/startPoint"></ConstraintSet>
+
+    <ConstraintSet android:id="@+id/swipeLeft"></ConstraintSet>
+    <ConstraintSet android:id="@+id/swipeRight" />
+    <Transition
+        motion:constraintSetEnd="@+id/swipeLeft"
+        motion:constraintSetStart="@+id/startPoint"
+        motion:duration="100">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@id/swipe_card"
+                motion:framePosition="100"
+                android:translationX="-70dp" />
+        </KeyFrameSet>
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchAnchorSide="left" />
+    </Transition>
+    <Transition
+        motion:constraintSetEnd="@+id/swipeRight"
+        motion:constraintSetStart="@+id/startPoint"
+        motion:duration="100">
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/swipe_card"
+                motion:framePosition="100"
+                android:translationX="70dp" />
+        </KeyFrameSet>
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorSide="right" />
+    </Transition>
+</MotionScene>

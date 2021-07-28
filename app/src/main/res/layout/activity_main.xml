@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.github.bleszerd.customcomponents.components.swipe_component.SwipeComponent
+        android:id="@+id/swap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.github.bleszerd.customcomponents.components.progress_button.ProgressButton
         android:id="@+id/btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Entrar" />
-
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:title="Login" />
 </androidx.constraintlayout.widget.ConstraintLayout>
